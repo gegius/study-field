@@ -1,0 +1,20 @@
+version: '3'
+
+services:
+  frontend:
+    build: ./frontend
+    ports:
+      - "3000:3000"
+    networks:
+      - study-field-network
+
+  backend:
+    build: ./backend
+    ports:
+      - "2000:2000"
+    networks:
+      - study-field-network
+
+networks:
+  study-field-network:
+    driver: bridge
